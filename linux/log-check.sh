@@ -4,11 +4,11 @@ LOGFILE="/var/log/syslog"
 KEYWORD="error"
 
 echo "==== LOG CHECK ===="
-echo "Suche nach:  $Keyword"
+echo "Suche nach:  $KEYWORD"
 echo "Datei:       $LOGFILE"
 echo ""
 
-COUNT=$(grep i "$KEYWORD"  "$LOGFILE" 2>/dev/null | wc -l)
+COUNT=$(grep -i "$KEYWORD" "$LOGFILE" 2>/dev/null | wc -l)
 echo "Gefundene Einträge: $COUNT"
 
 echo ""
